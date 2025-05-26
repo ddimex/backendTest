@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit academy</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <img
+      class="backgroundImg"
+      src="https://static1.squarespace.com/static/5e949a92e17d55230cd1d44f/t/6503135de3c6577fbc27c966/1694700397907/TiGradient3x2.png?format=1500w"
+    />
+
+    <div class="bodyContent flexCol">
+      <%- include("partials/header") %>
+
+      <div class="formContainer">
+        <form
+          class="flexCol"
+          action="/editAcademy/<%= academy._id %>"
+          method="POST"
+        >
+          <h1 class="cardTitle">Edit academy</h1>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Academy name"
+            value="<%= academy.name %>"
+          />
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Academy address"
+            value="<%= academy.address %>"
+          />
+          <input
+            type="text"
+            id="courses"
+            name="courses"
+            placeholder="Academy courses"
+            value="<%= academy.courses %>"
+          />
+          <button class="button" type="submit">
+            <div class="btnText">Save changes</div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
